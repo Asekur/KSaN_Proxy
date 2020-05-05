@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="html-about" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" />
+    <style>
+        html {
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+            font-size: 19px;
+            font-weight: normal;
+            line-height: 1.4;
+        }
+        
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        @media (max-width: 1200px) {
+            html,
+            body {
+                height: 140%;
+            }
+        }
+        
+        @media (min-width: 800px) {
+            html,
+            body {
+                height: 100%;
+            }
+        }
+        
+        .wrap {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            background: -webkit-linear-gradient(63deg, #151515 5px, transparent 5px) 0 5px, -webkit-linear-gradient(243deg, #151515 5px, transparent 5px) 10px 0px, -webkit-linear-gradient(63deg, #222 5px, transparent 5px) 0px 10px, -webkit-linear-gradient(243deg, #222 5px, transparent 5px) 10px 5px, -webkit-linear-gradient(0deg, #1b1b1b 10px, transparent 10px), -webkit-linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+            background: -moz-linear-gradient(63deg, #151515 5px, transparent 5px) 0 5px, -moz-linear-gradient(243deg, #151515 5px, transparent 5px) 10px 0px, -moz-linear-gradient(63deg, #222 5px, transparent 5px) 0px 10px, -moz-linear-gradient(243deg, #222 5px, transparent 5px) 10px 5px, -moz-linear-gradient(0deg, #1b1b1b 10px, transparent 10px), -moz-linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+            background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient( #1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+            background-size: 20px 20px;
+            background-color: #131313;
+        }
+        
+        header {
+            display: grid;
+            grid-template-columns: 33% 34% 33%;
+            grid-template-areas: "left center right";
+            justify-content: center;
+            box-shadow: 0 0.5em 1em #111;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 900;
+            width: 100%;
+            height: 68px;
+        }
+        
+        header label {
+            grid-area: center;
+            color: #ffffff;
+            line-height: 4.25em;
+            font-size: 1em;
+            font-weight: bold;
+            font-style: italic;
+            padding: 0 1em;
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.877);
+        }
+        
+        @media (max-width: 1200px) {
+            header {
+                display: grid;
+                box-shadow: 0 0.2em 0.6em #111;
+                font-size: 8px;
+                height: 40px;
+            }
+        }
+        
+        footer {
+            display: grid;
+            grid-template-areas: "l o p";
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            height: 65px;
+            width: 100%;
+            z-index: 900;
+        }
+        
+        main {
+            margin-top: 250px;
+            width: 100%;
+            height: 80%;
+        }
+        
+        main .access {
+            font-size: 60px;
+            font-weight: bold;
+            text-shadow: 6px 6px 7px rgba(0, 0, 0, 0.877);
+        }
+        
+        main .helpFor {
+            font-size: 14px;
+            font-style: italic;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.911);
+        }
+        
+        .wrapper {
+            grid-area: o;
+            width: 300px;
+        }
+        
+        .wrapper ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(4, 25%);
+            padding: 0;
+        }
+        
+        .wrapper ul li {
+            justify-self: center;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            margin: 0 6px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 2px solid #d8e2dc;
+            transition: all 0.5s ease;
+        }
+        
+        .wrapper ul li .fa {
+            color: #d8e2dc;
+            justify-self: center;
+            transition: all 0.2s ease;
+        }
+        
+        .wrapper ul li:hover.facebook {
+            border: 3px solid #3b5998;
+            box-shadow: 0 0 15px #3b5998;
+            transition: all 0.2s ease;
+        }
+        
+        .wrapper ul li:hover .fa-facebook {
+            color: #3b5998;
+            text-shadow: 0 0 15px #3b5998;
+            transition: all 0.2s ease;
+        }
+        /*github*/
+        
+        .wrapper ul li:hover.github {
+            border: 3px solid #00aced;
+            box-shadow: 0 0 15px #00aced;
+            transition: all 0.2s ease;
+        }
+        
+        .wrapper ul li:hover .fa-github {
+            color: #00aced;
+            text-shadow: 0 0 15px #00aced;
+            transition: all 0.2s ease;
+        }
+        /* instagram */
+        
+        .wrapper ul li:hover.instagram {
+            border: 3px solid #f362e0;
+            box-shadow: 0 0 15px #f362e0;
+            transition: all 0.2s ease;
+        }
+        
+        .wrapper ul li:hover .fa-instagram {
+            color: #f362e0;
+            text-shadow: 0 0 15px #f362e0;
+            transition: all 0.2s ease;
+        }
+        /* vk */
+        
+        .wrapper ul li:hover.vk {
+            border: 3px solid #2c2fff;
+            box-shadow: 0 0 15px #2c2fff;
+            transition: all 0.2s ease;
+        }
+        
+        .wrapper ul li:hover .fa-vk {
+            color: #2c2fff;
+            text-shadow: 0 0 15px #2c2fff;
+            transition: all 0.2s ease;
+        }
+        
+        @media (max-width: 1200px) {
+            footer {
+                height: 35px;
+            }
+            .wrapper ul li {
+                justify-self: center;
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+            }
+            .wrapper ul {
+                list-style: none;
+                margin: 0.2em;
+                padding: 0;
+            }
+        }
+    </style>
+    <title>Access is blocked</title>
+</head>
+
+<body class="body">
+    <div class="wrap">
+        <header class="header">
+            <label>Sorry :(</label>
+        </header>
+        <main>
+            <label class="access">Acces Is Blocked</label> <br />
+            <label class="helpFor">if you got to this page, be sure that the given URL is in the 'black
+          list'</label
+        >
+      </main>
+      <footer>
+        <div class="wrapper">
+          <ul>
+            <li class="facebook">
+              <a
+                href="https://ru-ru.facebook.com/people/Ангелина-Русинович/100025365888236"
+                ><i class="fa fa-facebook"></i
+              ></a>
+            </li>
+            <li class="github">
+              <a href="https://github.com/Asekur"
+                ><i class="fa fa-github"></i
+              ></a>
+            </li>
+            <li class="instagram">
+              <a href="https://www.instagram.com/chegelik/"
+                ><i class="fa fa-instagram"></i
+              ></a>
+            </li>
+            <li class="vk">
+              <a href="https://vk.com/chegelik"><i class="fa fa-vk"></i></a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
